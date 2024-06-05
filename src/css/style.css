@@ -1,0 +1,130 @@
+:root {
+    --background-color: #222323;
+    --black-chatlog: #171717;
+    --white-color: #f0f6f0;
+}
+
+@font-face {
+    font-family: "Pixelify-Sans";
+    src: url("../fonts/PixelifySans-Regular.otf");
+}
+
+html {
+    background: url("../img/background.png") no-repeat;
+    background-size: cover;
+    min-height: 100%;
+}
+
+body {
+    color: var(--white-color);
+    font-family: 'Pixelify-Sans';
+}
+
+input {
+    background-color: var(--black-chatlog);
+    border: 1.5px solid var(--white-color);
+    color: var(--white-color);
+    font-family: 'Pixelify-Sans';
+    padding-top: 10px;
+    margin-top: 1em;
+    margin-left: 14px;
+}
+
+input:focus {
+    /* outline: 2px solid var(--white-color); */
+    outline: none;
+}
+
+button {
+    width: 60px;
+    background-color: var(--black-chatlog);
+    border: 1.5px solid var(--white-color);
+    color: var(--white-color);
+    font-family: 'Pixelify-Sans';
+    cursor: pointer;
+    padding: 10px 2px 1px 2px;
+}
+
+button:active {
+    background-color: var(--white-color);
+    color: var(--black-chatlog);
+    border: 1.5px solid var(--black-chatlog);
+}
+
+ul {
+    list-style: none;
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+.placehorder {
+    position: absolute;
+    background: linear-gradient(to top, #222323 99%, #171717 1%) transparent;
+    padding: 5px;
+    left: 0;
+    margin-left: 2em;
+    height: 5px;
+}
+
+.chat-log {
+    background: var(--black-chatlog);
+    border: 3px solid var(--white-color);
+    width: 350px;
+    height: 200px;
+    margin-left: 1em;
+    overflow-y: scroll;
+    text-indent: 0.3em;
+    font-size: 14px;
+}
+
+.chat-log::-webkit-scrollbar {
+    width: 1em;
+}
+
+.chat-log::-webkit-scrollbar-thumb {
+    background-color: var(--black-chatlog);
+    border: 3px solid var(--background-color);
+    border-radius: 5px;
+}
+
+.chat-log::-webkit-scrollbar-track {
+    background-color: var(--background-color);
+}
+
+.warrior-info {
+    background: var(--black-chatlog);
+    border: 2px solid var(--white-color);
+    width: 350px;
+    height: 200px;
+    margin-left: 1em;
+    margin-top: 6em;
+    text-indent: 0.3em;
+    font-size: 14px;
+}
+
+.info-of {
+    display: inline-flex;
+}
+
+#warrior-pfp {
+    border: 3px solid var(--white-color);
+    margin-left: 0.5em;
+    align-self: center;
+}
+
+.items {
+    margin: auto;
+    width: 325px;
+    height: 50px;
+    border: 2px solid var(--white-color);
+    background-color: var(--background-color);
+}
+
+#item-label {
+    position: absolute;
+    border: 2px solid var(--white-color);
+    background-color: var(--background-color);
+    padding: 5px;
+    left: 0;
+    margin-top: 10px;
+}
