@@ -121,10 +121,13 @@ ul {
 }
 
 #item-label {
-    position: absolute;
+    position: relative;
+    width: 100px;
     border: 2px solid var(--white-color);
     background-color: var(--background-color);
+    text-align: center;
     padding: 5px;
-    left: 0;
-    margin-top: 10px;
+    left: 50%;
+    top: -50%;
+    transform: translateX(-50%);
 }
