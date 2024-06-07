@@ -91,7 +91,7 @@ ul {
     background-color: var(--background-color);
 }
 
-.warrior-info {
+.container-info {
     background: var(--black-chatlog);
     border: 2px solid var(--white-color);
     width: 350px;
@@ -102,11 +102,11 @@ ul {
     font-size: 14px;
 }
 
-.info-of {
+.info {
     display: inline-flex;
 }
 
-#warrior-pfp {
+#character-pfp {
     border: 3px solid var(--white-color);
     margin-left: 0.5em;
     align-self: center;
