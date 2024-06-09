@@ -131,3 +131,7 @@ ul {
     top: -50%;
     transform: translateX(-50%);
 }
+
+#sword {
+    transform: translateY(-80%);
+}
