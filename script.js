@@ -37,21 +37,20 @@ class Boss {
 let chatlog = document.querySelector('.chat-log');
 let send = document.querySelector('#send');
 
-// let nameLocal = prompt("What's your name?");
-// const setName = (name) => localStorage.setItem(nameLocal, name);
-// setName(nameLocal);
+let nameLocal = prompt("What's your name?");
+const setName = (name) => localStorage.setItem(nameLocal, name);
+setName(nameLocal);
 
-// let warriorTypeLocal = prompt("What's your class?");
-// const setType = (type) => localStorage.setItem(warriorTypeLocal, type);
-// setType(warriorTypeLocal);
+let warriorTypeLocal = prompt("What's your class?");
+const setType = (type) => localStorage.setItem(warriorTypeLocal, type);
+setType(warriorTypeLocal);
 
-// let localSex = prompt("What's your gender")
-// const setSex = (sex) => localStorage.setItem(localSex, sex)
-// setSex(localSex);
+document.querySelector('#name-warrior').innerHTML = `Name: ${localStorage.getItem(nameLocal)}`
+document.querySelector('#class-warrior').innerHTML = `Class: ${localStorage.getItem(warriorTypeLocal)}`
 
 // localStorage.getItem(nameLocal), localStorage.getItem(warriorTypeLocal), localStorage.getItem(localSex)
 
-const warrior = new Warrior('Warrior');
+const warrior = new Warrior(localStorage.getItem(nameLocal), localStorage.getItem(warriorTypeLocal));
 const monster = new Monster('Monster');
 const boss = new Boss('Orgy')
 
