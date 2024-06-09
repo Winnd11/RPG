@@ -135,3 +135,8 @@ ul {
 #sword {
     transform: translateY(-80%);
 }
+
+.character-container {
+    display: flex;
+    justify-content: space-around;
+}
