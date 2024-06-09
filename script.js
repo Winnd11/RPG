@@ -124,16 +124,14 @@ function fight(value) {
     }
 }
 
-// function fight2() {
-//     let lifeWarrior = 35
-//     let lifeBoss = 45
+function fight2() {
+    let lifeWarrior = 35
+    let lifeBoss = 45
 
-//     const raceList = ['Goblin', 'Dragon']
+    const raceList = ['Goblin', 'Dragon']
 
-//     const raceGenerator = () => {
-//     const index = Math.floor(Math.random() * raceList.length);
-//     console.log(raceList[index])
-//     };
-
-    
-// };
+    const raceGenerator = () => {
+    const index = Math.floor(Math.random() * raceList.length);
+    console.log(raceList[index])
+    };
+};
