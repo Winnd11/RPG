@@ -1,8 +1,8 @@
 class Warrior {
-    constructor(firstName, warriorType, warriorSex) {
+    constructor(firstName, warriorType) {
         this.firstName = firstName,
         this.warriorType = warriorType,
-        this.warriorSex = warriorSex
+        this.itensArray = ['Sword', 'Potion']
     }
 
     getFullName() {
@@ -13,8 +13,13 @@ class Warrior {
         return this.warriorType
     }
 
-    getWarriorSex () {
-        return this.warriorSex
+    getItem(item) {
+        this.itensArray.push(item)
+    }
+    
+    usePotion() {
+        const returnItens = this.itensArray.includes('Potion')
+        return returnItens || console.log('not found')
     }
 }
 
