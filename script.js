@@ -45,14 +45,17 @@ let warriorTypeLocal = prompt("What's your class?");
 const setType = (type) => localStorage.setItem(warriorTypeLocal, type);
 setType(warriorTypeLocal);
 
-const letter = (localName) => {const upper = String(localName).charAt(0).toUpperCase(); return upper} 
+const letter = (localName) => {
+    const upper = String(localName).charAt(0).toUpperCase();
+    return upper + String(localName).replace(String(localName).charAt(0), '')
+} 
 
-document.querySelector('#name-warrior').innerHTML = `Name: ${letter(nameLocal) + nameLocal.replace(nameLocal.charAt(0), '')}`;
-document.querySelector('#class-warrior').innerHTML = `Class: ${letter(warriorTypeLocal) + warriorTypeLocal.replace(warriorTypeLocal.charAt(0), '')}`;
+document.querySelector('#name-warrior').innerHTML = `Name: ${letter(nameLocal)}`;
+document.querySelector('#class-warrior').innerHTML = `Class: ${letter(warriorTypeLocal)}`;
 
 // localStorage.getItem(nameLocal), localStorage.getItem(warriorTypeLocal), localStorage.getItem(localSex)
 
-const warrior = new Warrior(localStorage.getItem(nameLocal), localStorage.getItem(warriorTypeLocal));
+const warrior = new Warrior(letter(nameLocal), localStorage.getItem(warriorTypeLocal));
 const monster = new Monster('Monster');
 const boss = new Boss('Orgy')
 
