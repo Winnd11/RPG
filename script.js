@@ -14,12 +14,18 @@ class Warrior {
     }
 
     getItem(item) {
-        this.itensArray.push(item)
+        this.itensArray.pop(item)
+        console.log('potion!');
+        // LifeRecovery = Math.floor(Math.random() * (4 - 1) + 1)
+        // let lifeWarriorRecovery = parseInt(localWarriorLife, 10)
+        // lifeWarriorRecovery = lifeWarriorRecovery + LifeRecovery
+        // localStorage.setItem('localWarriorLife', lifeWarriorRecovery);
+        // console.log(localWarriorLife);
     }
     
     usePotion() {
         const returnItens = this.itensArray.includes('Potion')
-        return returnItens || console.log('not found')
+        return returnItens ? warrior.getItem('Potion') : console.log('potion has been used'); 
     }
 }
 
@@ -82,7 +88,7 @@ function demage(character) {
     let localWarriorLife = localStorage.getItem('localWarriorLife');
     let localMonsterLife = localStorage.getItem('localMonsterLife');
 
-    demageWarrior = Math.floor(Math.random() * 7);
+    demageWarrior = Math.floor(Math.random() * 11);
     demageMonster = Math.floor(Math.random() * 12);
 
     if(character === 'Warrior') {
@@ -102,8 +108,9 @@ function randomDefense() {
     let randomDefense = Math.floor(Math.random() * 6)
     if (randomDefense >= 2) {
         demage('Warrior')
+        console.log('took damage');
     } else {
-        console.log('nn tomou dano');
+        console.log('took no demage');
     } 
 }
 
@@ -123,14 +130,12 @@ function fight(value) {
         chatlog.appendChild(nodeMonster)
 
     }  else if (valueInt === 2) {
-        LifeRecovery = Math.floor(Math.random() * (4 - 1) + 1)
-        let lifeMonsterCheck2 = parseInt(localWarriorLife, 10)
-        lifeMonsterCheck2 = lifeMonsterCheck2 + LifeRecovery
-        localStorage.setItem('localWarriorLife', lifeMonsterCheck2);
-        const textLife = document.createTextNode(`potion used! now the ${warrior.getFullName()} life is ${localWarriorLife}`); 
-        let nodeLife = document.createElement('p');
-        nodeLife.appendChild(textLife)
-        chatlog.appendChild(nodeLife)
+        warrior.usePotion();
+        console.log('2 teste')
+        // const textLife = document.createTextNode(`potion used! now the ${warrior.getFullName()} life is ${localWarriorLife}`); 
+        // let nodeLife = document.createElement('p');
+        // nodeLife.appendChild(textLife)
+        // chatlog.appendChild(nodeLife)
     } else if (valueInt === 3){
         randomDefense();
     } else {
