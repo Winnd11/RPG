@@ -25,7 +25,7 @@ class Warrior {
     
     usePotion() {
         const returnItens = this.itensArray.includes('Potion')
-        return returnItens ? warrior.getItem('Potion') : console.log('potion has been used'); 
+        return returnItens ? warrior.getItem('Potion') : console.log('potion has been used // empty'); 
     }
 }
 
