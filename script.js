@@ -70,51 +70,59 @@ console.log(localStorage.getItem('localWarriorLife'));
 localStorage.setItem('localMonsterLife', 35)
 console.log(localStorage.getItem('localMonsterLife'));
 
-send.addEventListener('click', sendBtn)
-function sendBtn() {
-    let input = document.querySelector('input').value
-    fight(input);
-};
-
 function checkLife() {
     let lifeMonster = parseInt(localStorage.getItem('localMonsterLife', 10))
     let lifeWarrior = parseInt(localStorage.getItem('localWarriorLife', 10))
-
-    if(lifeMonster <= 0) {
-        console.log(`the ${monster.getFullName()} is dead, the ${warrior.getFullName()} win!`.toUpperCase());
-    }
-
-    if (lifeWarrior <= 0) {
-        console.log(`Oh no! ${warrior.getFullName()} is dead, the ${monster.getFullName()} win!`.toUpperCase());
-    }
+        
+    lifeMonster <= 0 ? console.log('monster dead teste') : false
+    lifeWarrior <= 0 ? console.log('warrior dead teste') : false 
 };
 
-function fight(value) {
+function demage(character) {
     let localWarriorLife = localStorage.getItem('localWarriorLife');
     let localMonsterLife = localStorage.getItem('localMonsterLife');
 
-    demageWarrior = Math.floor(Math.random() * 12);
-    demageMonster = Math.floor(Math.random() * 7);
+    demageWarrior = Math.floor(Math.random() * 7);
+    demageMonster = Math.floor(Math.random() * 12);
 
-    checkLife();
-    if (parseInt(value, 10) === 1) {
+    if(character === 'Warrior') {
+        let lifeWarriorCheck = parseInt(localWarriorLife, 10)
+        lifeWarriorCheck = lifeWarriorCheck - demageMonster
+        localStorage.setItem('localWarriorLife', lifeWarriorCheck);
+    }
+
+    else if (character === 'Monster') {
         let lifeMonsterCheck = parseInt(localMonsterLife, 10)
         lifeMonsterCheck = lifeMonsterCheck - demageWarrior
         localStorage.setItem('localMonsterLife', lifeMonsterCheck);
+    }
+}
+
+function randomDefense() {
+    let randomDefense = Math.floor(Math.random() * 6)
+    if (randomDefense >= 2) {
+        demage('Warrior')
+    } else {
+        console.log('nn tomou dano');
+    } 
+}
+
+function fight(value) {
+    let valueInt = parseInt(value, 10);
+    if (valueInt === 1) {
+        demage('Monster)
         const text = document.createTextNode(`${warrior.getFullName()} turn! he took ${demageWarrior} now the ${monster.getFullName()} has ${localStorage.getItem('localMonsterLife')} and the ${warrior.getFullName()} has ${localStorage.getItem('localWarriorLife')}`);
         let node = document.createElement('p');
         node.appendChild(text)
         chatlog.appendChild(node)
 
-        let lifeWarriorCheck = parseInt(localWarriorLife, 10)
-        lifeWarriorCheck = lifeWarriorCheck - demageMonster
-        localStorage.setItem('localWarriorLife', lifeWarriorCheck);
+        demage('Warrior')
         const textMonster = document.createTextNode(`Now its ${monster.getFullName()} turn! he took ${demageMonster} now the ${warrior.getFullName()} has ${localStorage.getItem('localWarriorLife')} and the ${monster.getFullName()} has ${localStorage.getItem('localMonsterLife')}`); 
         let nodeMonster = document.createElement('p');
         nodeMonster.appendChild(textMonster)
         chatlog.appendChild(nodeMonster)
 
-    }  else if (parseInt(value, 10)  === 2) {
+    }  else if (valueInt === 2) {
         LifeRecovery = Math.floor(Math.random() * (4 - 1) + 1)
         let lifeMonsterCheck2 = parseInt(localWarriorLife, 10)
         lifeMonsterCheck2 = lifeMonsterCheck2 + LifeRecovery
@@ -123,15 +131,20 @@ function fight(value) {
         let nodeLife = document.createElement('p');
         nodeLife.appendChild(textLife)
         chatlog.appendChild(nodeLife)
-    } else if (parseInt(value, 10)  === 3){
-        const textDefense = document.createTextNode(`${warrior.getFullName()} defended himself, he took 0 demage`); 
-        let nodeDefense = document.createElement('p');
-        nodeDefense.appendChild(textDefense)
-        chatlog.appendChild(nodeDefense)
+    } else if (valueInt === 3){
+        randomDefense();
     } else {
         alert('invalid command')
     }
-}
+
+    checkLife();
+};
+
+send.addEventListener('click', sendBtn)
+function sendBtn() {
+    let input = document.querySelector('input').value
+    fight(input);
+};
 
 function fight2() {
     let lifeWarrior = 35
