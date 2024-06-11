@@ -110,7 +110,7 @@ function randomDefense() {
 function fight(value) {
     let valueInt = parseInt(value, 10);
     if (valueInt === 1) {
-        demage('Monster)
+        demage('Monster')
         const text = document.createTextNode(`${warrior.getFullName()} turn! he took ${demageWarrior} now the ${monster.getFullName()} has ${localStorage.getItem('localMonsterLife')} and the ${warrior.getFullName()} has ${localStorage.getItem('localWarriorLife')}`);
         let node = document.createElement('p');
         node.appendChild(text)
