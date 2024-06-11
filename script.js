@@ -14,13 +14,11 @@ class Warrior {
     }
 
     getItem(item) {
+        let lifeWarriorRecovery = parseInt(localStorage.getItem('localWarriorLife'), 10)
+        let lifeRecovery = Math.floor(Math.random() * 6)
+        lifeWarriorRecovery = lifeWarriorRecovery + lifeRecovery
+        localStorage.setItem('localWarriorLife', lifeWarriorRecovery)
         this.itensArray.pop(item)
-        console.log('potion!');
-        // LifeRecovery = Math.floor(Math.random() * (4 - 1) + 1)
-        // let lifeWarriorRecovery = parseInt(localWarriorLife, 10)
-        // lifeWarriorRecovery = lifeWarriorRecovery + LifeRecovery
-        // localStorage.setItem('localWarriorLife', lifeWarriorRecovery);
-        // console.log(localWarriorLife);
     }
     
     usePotion() {
