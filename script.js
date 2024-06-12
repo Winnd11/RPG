@@ -27,7 +27,7 @@ class Warrior {
     
     usePotion() {
         const returnItens = this.itensArray.includes('Potion')
-        return returnItens ? warrior.getItem('Potion') : console.log('potion has been used // empty'); 
+        return returnItens ? warrior.removePotion('Potion') : console.log('potion has been used // empty'); 
     }
 }
 
@@ -133,11 +133,6 @@ function fight(value) {
 
     }  else if (valueInt === 2) {
         warrior.usePotion();
-        console.log('2 teste')
-        // const textLife = document.createTextNode(`potion used! now the ${warrior.getFullName()} life is ${localWarriorLife}`); 
-        // let nodeLife = document.createElement('p');
-        // nodeLife.appendChild(textLife)
-        // chatlog.appendChild(nodeLife)
     } else if (valueInt === 3){
         randomDefense();
     } else {
