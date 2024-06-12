@@ -13,12 +13,16 @@ class Warrior {
         return this.warriorType
     }
 
-    getItem(item) {
+     removePotion(item) {
         let lifeWarriorRecovery = parseInt(localStorage.getItem('localWarriorLife'), 10)
         let lifeRecovery = Math.floor(Math.random() * 6)
         lifeWarriorRecovery = lifeWarriorRecovery + lifeRecovery
         localStorage.setItem('localWarriorLife', lifeWarriorRecovery)
         this.itensArray.pop(item)
+        const textLife = document.createTextNode(`potion used! now the ${warrior.getFullName()} life is ${localStorage.getItem('localWarriorLife')}`); 
+        let nodeLife = document.createElement('p');
+        nodeLife.appendChild(textLife)
+        chatlog.appendChild(nodeLife)
     }
     
     usePotion() {
