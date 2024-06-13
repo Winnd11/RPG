@@ -1,7 +1,6 @@
 :root {
-    --background-color: #222323;
-    --black-chatlog: #171717;
-    --white-color: #f0f6f0;
+    --background-color: #0a0909;
+    --white-color: #ececec;
 }
 
 @font-face {
@@ -21,7 +20,7 @@ body {
 }
 
 input {
-    background-color: var(--black-chatlog);
+    background-color: var(--background-color);
     border: 1.5px solid var(--white-color);
     color: var(--white-color);
     font-family: 'Pixelify-Sans';
@@ -37,7 +36,7 @@ input:focus {
 
 button {
     width: 60px;
-    background-color: var(--black-chatlog);
+    background-color: var(--background-color);
     border: 1.5px solid var(--white-color);
     color: var(--white-color);
     font-family: 'Pixelify-Sans';
@@ -48,7 +47,7 @@ button {
 button:active {
     background-color: var(--white-color);
     color: var(--black-chatlog);
-    border: 1.5px solid var(--black-chatlog);
+    border: 1.5px solid var(--background-color);
 }
 
 ul {
@@ -67,7 +66,7 @@ ul {
 }
 
 .chat-log {
-    background: var(--black-chatlog);
+    background: var(--background-color);
     border: 3px solid var(--white-color);
     width: 350px;
     height: 200px;
@@ -82,7 +81,7 @@ ul {
 }
 
 .chat-log::-webkit-scrollbar-thumb {
-    background-color: var(--black-chatlog);
+    background-color: var(--background-color);
     border: 3px solid var(--background-color);
     border-radius: 5px;
 }
