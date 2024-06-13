@@ -110,9 +110,15 @@ function randomDefense() {
     let randomDefense = Math.floor(Math.random() * 6)
     if (randomDefense >= 2) {
         demage('Warrior')
-        console.log('took damage');
+        const text = document.createTextNode(`${warrior.getFullName()} couldn't defend himself and took ${demageMonster} damage`) 
+        let node = document.createElement('p')
+        node.appendChild(text)
+        chatlog.appendChild(node)
     } else {
-        console.log('took no demage');
+        const text2 = document.createTextNode(`${warrior.getFullName()} managed to defend himself and didn't take any damage!`)
+        let node2 = document.createElement('p')
+        node2.appendChild(text2)
+        chatlog.appendChild(node2)
     } 
 }
 
