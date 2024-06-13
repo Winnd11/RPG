@@ -58,7 +58,7 @@ ul {
 
 .placehorder {
     position: absolute;
-    background: linear-gradient(to top, #222323 99%, #171717 1%) transparent;
+    background-color: var(--background-color);
     padding: 5px;
     left: 0;
     margin-left: 2em;
