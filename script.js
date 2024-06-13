@@ -66,8 +66,6 @@ const letter = (localName) => {
 document.querySelector('#name-warrior').innerHTML = `Name: ${letter(nameLocal)}`;
 document.querySelector('#class-warrior').innerHTML = `Class: ${letter(warriorTypeLocal)}`;
 
-// localStorage.getItem(nameLocal), localStorage.getItem(warriorTypeLocal), localStorage.getItem(localSex)
-
 const warrior = new Warrior(letter(nameLocal), localStorage.getItem(warriorTypeLocal));
 const monster = new Monster('Monster');
 const boss = new Boss('Orgy')
