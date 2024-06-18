@@ -25,8 +25,8 @@ input {
     color: var(--white-color);
     font-family: 'Pixelify-Sans';
     padding-top: 10px;
-    margin-top: 1em;
-    margin-left: 14px;
+    margin-top: 7em;
+    margin-left: 7em;
 }
 
 input:focus {
@@ -61,16 +61,16 @@ ul {
     background-color: var(--background-color);
     padding: 5px;
     left: 0;
-    margin-left: 2em;
+    margin-top: 5em;
+    margin-left: 7em;
     height: 5px;
 }
 
 .chat-log {
-    background: var(--background-color);
-    border: 3px solid var(--white-color);
-    width: 350px;
-    height: 200px;
-    margin-left: 1em;
+    width: 400px;
+    height: 160px;
+    margin-left: 7em;
+    transform: translateY(4em);
     overflow-y: scroll;
     text-indent: 0.3em;
     font-size: 14px;
@@ -138,4 +138,41 @@ ul {
 .character-container {
     display: flex;
     justify-content: space-around;
+}
+
+#scroll {
+    position: absolute;
+    z-index: -1;
+}
+
+.warrior-sprite {
+    width: calc(360px / 4);
+    height: 90px;
+    background: url('../img/warrior-sprite.png');
+    animation: wsrpite 1s steps(4) infinite;
+}
+
+@keyframes wsrpite {
+    from {
+        background-position: 0;
+    }
+    to {
+        background-position: 360px;
+    }
+}
+
+.monster-sprite {
+    width: calc(180px / 2);
+    height: 90px;
+    background: url('../img/monster-sprite.png');
+    animation: msprite 1s steps(2) infinite
+}
+
+@keyframes msprite {
+    from {
+        background-position: 0;
+    }
+    to {
+        background-position: 180px;
+    }
 }
