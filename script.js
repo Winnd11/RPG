@@ -50,6 +50,8 @@ class Boss {
 let chatlog = document.querySelector('.chat-log');
 let send = document.querySelector('#send');
 
+let play = 1;
+
 let nameLocal = prompt("What's your name?");
 const setName = (name) => localStorage.setItem(nameLocal, name);
 setName(nameLocal);
