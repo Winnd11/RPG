@@ -17,6 +17,7 @@ html {
 body {
     color: var(--white-color);
     font-family: 'Pixelify-Sans';
+    overflow: hidden;
 }
 
 input {
@@ -30,7 +31,6 @@ input {
 }
 
 input:focus {
-    /* outline: 2px solid var(--white-color); */
     outline: none;
 }
 
