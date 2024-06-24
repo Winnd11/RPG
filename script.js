@@ -82,8 +82,8 @@ function checkLife() {
     let lifeMonster = parseInt(localStorage.getItem('localMonsterLife', 10))
     let lifeWarrior = parseInt(localStorage.getItem('localWarriorLife', 10))
         
-    lifeMonster <= 0 ? console.log('monster dead teste') : false
-    lifeWarrior <= 0 ? console.log('warrior dead teste') : false 
+    lifeMonster <= 0 ? play = 0 : false
+    lifeWarrior <= 0 ? play = 0 : false 
 };
 
 function demage(character) {
@@ -150,8 +150,13 @@ function fight(value) {
 
 send.addEventListener('click', sendBtn)
 function sendBtn() {
-    let input = document.querySelector('input').value
-    fight(input);
+    if (play != 0) {
+        let input = document.querySelector('input').value
+        fight(input);
+    } else {
+            // ------- im still working on it ------
+        alert('somebody is dead');
+    }
 };
 
 // function fight2() {
