@@ -146,6 +146,9 @@ ul {
 }
 
 .warrior-sprite {
+    position: absolute;
+    top: 14.6em;
+    left: 50em;
     width: calc(360px / 4);
     height: 90px;
     background: url('../img/warrior-sprite.png');
@@ -162,10 +165,13 @@ ul {
 }
 
 .monster-sprite {
+    position: absolute;
+    top: 14.3em;
+    left: 60em;
     width: calc(180px / 2);
     height: 90px;
     background: url('../img/monster-sprite.png');
-    animation: msprite 1s steps(2) infinite
+    animation: msprite 1s steps(2) infinite;
 }
 
 @keyframes msprite {
