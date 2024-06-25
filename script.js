@@ -154,19 +154,25 @@ function sendBtn() {
         let input = document.querySelector('input').value
         fight(input);
     } else {
-            // ------- im still working on it ------
-        alert('somebody is dead');
+        checkPlay();
     }
 };
 
-// function fight2() {
-//     let lifeWarrior = 35
-//     let lifeBoss = 45
+const checkPlay = () => {
+    let lifeMonster = parseInt(localStorage.getItem('localMonsterLife', 10));
+    let lifeWarrior = parseInt(localStorage.getItem('localWarriorLife', 10));
+    
+    if (lifeMonster <= 0) {
+        const text = document.createTextNode(`${monster.getFullName()} is dead! ${warrior.getFullName()} win!`) 
+        let node = document.createElement('p')
+        node.appendChild(text)
+        chatlog.appendChild(node)
+    }
 
-//     const raceList = ['Goblin', 'Dragon']
-
-//     const raceGenerator = () => {
-//     const index = Math.floor(Math.random() * raceList.length);
-//     console.log(raceList[index])
-//     };
-// };
+    if (lifeWarrior <= 0) {
+        const text = document.createTextNode(`${warrior.getFullName()} is dead! ${monster.getFullName()} win!`) 
+        let node = document.createElement('p')
+        node.appendChild(text)
+        chatlog.appendChild(node)
+    }
+};
