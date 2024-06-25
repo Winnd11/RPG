@@ -2,8 +2,8 @@
 <p>First game I made using vanilla js, and here is the list of programs I used to create it:</p>
 
 <ul>
-  <li><a href="https://store.steampowered.com/app/431730/Aseprite/?l=portuguese">Gimp</a> for background</li>
-  <li><a href="https://www.gimp.org/downloads/">Aseprite</a> for characters</li>
+  <li><a href="https://www.gimp.org/downloads/">Gimp</a> for background</li>
+  <li><a href="https://store.steampowered.com/app/431730/Aseprite/?l=english">Aseprite</a> for characters</li>
 </ul>
 
 **Set difficulty**
