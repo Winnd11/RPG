@@ -21,7 +21,7 @@ localStorage.setItem('localMonsterLife', 35) // change the monster's life here
 
 **AND YES I know that localstorage saves files in the browser cache, to do this you just need to delete it, look for `winnd11.github.io` in your browser settings and delete the data**
 
-<img aling='center' border-radius='50' width='700' src="src/img/Captura de tela 2024-06-19 171538.png">
+<img width='700' src="src/img/Captura de tela 2024-06-19 171538.png">
 
 **NOTE: I recommend playing with full screen.**
 
