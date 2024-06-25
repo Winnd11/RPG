@@ -19,7 +19,9 @@ localStorage.setItem('localMonsterLife', 35) // change the monster's life here
 
 <p>The answer is simple: it's because this was the only way I could update the characters' lives in the middle of battle</p>
 
-**AND YES I know that localstorage saves files in the browser cache, to do this you just need to delete it, look for `winnd11.github.io` in your browser settings and delete the data**
+**AND YES I know that localstorage saves files in the browser cache, to do this you just need to delete it, look for `winnd11.github.io` in your browser settings and delete the data.**
+
+<p>Play online <a href="https://winnd11.github.io/RPG/">here!</a></p>
 
 <img width='700' src="src/img/Captura de tela 2024-06-19 171538.png">
 
